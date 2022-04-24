@@ -49,5 +49,6 @@ export default {
     fonts: {
         regular: 'Inika-Regular',
         bold: 'Inika-Bold',
+        Alef: 'Alef-Regular',
     }
 }

@@ -1,9 +1,11 @@
 import React from 'react';
+
 import { StatusBar } from 'expo-status-bar';
 import { useTheme } from 'styled-components/native';
 
 import { Market } from '../../components/Market';
 import { EssenceCount } from '../../components/EssenceCount';
+import { PhaseCard } from './PhaseCard';
 
 import {
     Container,
@@ -20,6 +22,7 @@ export function Home() {
         <Container>
             <StatusBar style='light' backgroundColor={theme.colors.black} translucent={false} />
 
+
             <Header>
                 <Market active={true} />
 
@@ -29,8 +32,11 @@ export function Home() {
                 </UserInfo>
             </Header>
 
-            <Cards>
 
+            <Cards>
+                <PhaseCard />
+                <PhaseCard />
+                <PhaseCard />
             </Cards>
         </Container>
     );

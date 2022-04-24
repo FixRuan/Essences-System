@@ -12,6 +12,7 @@ import { Home } from './src/Screens/Home';
 let customFonts = {
   'Inika-Regular': require('./src/assets/Fonts/Inika-Regular.ttf'),
   'Inika-Bold': require('./src/assets/Fonts/Inika-Bold.ttf'),
+  'Alef-Regular': require('./src/assets/Fonts/Alef-Regular.ttf'),
 }
 
 export default function App() {

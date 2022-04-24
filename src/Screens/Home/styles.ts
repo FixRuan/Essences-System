@@ -22,4 +22,7 @@ export const UserName = styled.Text`
    color: ${({ theme }) => theme.colors.white};
 `;
 
-export const Cards = styled.View``;
+export const Cards = styled.View`
+   padding: 0px 24px;
+   margin-top: 30px;
+`;
