@@ -8,6 +8,7 @@ import { ThemeProvider } from 'styled-components/native';
 import theme from './src/Global/theme/theme';
 
 import { Home } from './src/Screens/Home';
+import { Market } from './src/Screens/Market';
 
 let customFonts = {
   'Inika-Regular': require('./src/assets/Fonts/Inika-Regular.ttf'),
@@ -25,7 +26,7 @@ export default function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <Home />
+      <Market />
     </ThemeProvider>
   );
 }
