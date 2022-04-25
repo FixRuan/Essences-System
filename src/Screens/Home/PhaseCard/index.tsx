@@ -1,9 +1,10 @@
 import React from 'react';
 import { useTheme } from 'styled-components/native';
 
-import Fire from '../../../assets/Essences/fire.svg';
+import { ConvertTypeInSvg } from '../../../utils/typeSvg';
 import { Essence } from './Essence';
 import { ProgressBar } from './ProgressBar';
+import { Type } from '../../../utils/typeSvg';
 
 import {
     Container,
@@ -15,27 +16,40 @@ import {
     Percentage,
 } from './styles';
 
-export function PhaseCard() {
+interface PhaseCardProps {
+    type: Type;
+    percentage: number;
+}
+
+export function PhaseCard({ type, percentage }: PhaseCardProps) {
 
     const theme = useTheme();
 
+    const svg = {
+        type,
+        color: theme.colors.white,
+        size: 24,
+    }
+
+    const SvgType = ConvertTypeInSvg(svg);
+
     return (
-        <Container>
+        <Container type={type} >
             <EssenceTypeView>
-                <Fire fill={theme.colors.white} />
+                {SvgType}
             </EssenceTypeView>
 
             <Header>
                 <Title>#Introdução</Title>
-                <Essence />
+                <Essence type={type} />
             </Header>
 
             <Content>
                 <SubTitle>Entenderemos o básico de T.I e como tudo se conecta com programação.</SubTitle>
             </Content>
 
-            <Percentage>100%</Percentage>
-            <ProgressBar />
+            <Percentage>{percentage}%</Percentage>
+            <ProgressBar type={type} percentage={percentage} />
         </Container>
     );
 }

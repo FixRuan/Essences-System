@@ -33,10 +33,13 @@ export function Home() {
             </Header>
 
 
-            <Cards>
-                <PhaseCard />
-                <PhaseCard />
-                <PhaseCard />
+            <Cards showsVerticalScrollIndicator={false}>
+                <PhaseCard type='fire' percentage={100} />
+                <PhaseCard type='dragon' percentage={80} />
+                <PhaseCard type='psychic' percentage={60} />
+                <PhaseCard type='grass' percentage={56} />
+                <PhaseCard type='steel' percentage={38} />
+                <PhaseCard type='rock' percentage={18} />
             </Cards>
         </Container>
     );

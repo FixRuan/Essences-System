@@ -1,8 +1,10 @@
 import styled from 'styled-components/native';
+import { Type } from '../../../../utils/typeSvg';
 
 
 interface ProgressBar {
     progress: number;
+    type: Type;
 }
 
 export const Container = styled.View`
@@ -16,7 +18,7 @@ export const Container = styled.View`
 export const Progress = styled.View<ProgressBar>`
     width: ${({ progress }) => progress}%;
     height: 100%;
-    background-color: ${({ theme }) => theme.colors.type.fire};
+    background-color: ${({ theme, type }) => theme.colors.type[type]};
     border-radius: 10px;
     opacity: 1;
 `;

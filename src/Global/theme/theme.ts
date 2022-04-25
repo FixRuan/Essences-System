@@ -30,7 +30,7 @@ export default {
             dragon: '#7383B9',
             electric: '#F2CB55',
             fairy: '#EBA8C3',
-            fighting: '#EB4971',
+            fighting: '#EB4970',
             fire: '#FFA756',
             flying: '#83A2E3',
             ghost: '#8571BE',

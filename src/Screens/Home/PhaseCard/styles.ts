@@ -1,10 +1,15 @@
 import { RFValue } from 'react-native-responsive-fontsize';
-import styled from 'styled-components/native'
+import styled from 'styled-components/native';
+import { Type } from '../../../utils/typeSvg';
 
-export const Container = styled.View`
+interface TypeProps {
+   type: Type;
+}
+
+export const Container = styled.View<TypeProps>`
    width: 100%;
    min-height: 110px;
-   background-color: ${({ theme }) => theme.colors.backgroundType.fire};
+   background-color: ${({ theme, type }) => theme.colors.backgroundType[type]};
    border-radius: 10px;
    margin-bottom: 20px;
 `;
@@ -17,8 +22,8 @@ export const EssenceTypeView = styled.View`
    background-color: ${({ theme }) => theme.colors.black};
    border-radius: 25px;
    position: absolute;
-   top: -15px;
-   left: -15px;
+   top: -10px;
+   left: -10px;
 `;
 
 export const Header = styled.View`

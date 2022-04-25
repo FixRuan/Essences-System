@@ -1,3 +1,4 @@
+import { ScrollView } from 'react-native';
 import { RFValue } from 'react-native-responsive-fontsize';
 import styled from 'styled-components/native'
 
@@ -22,7 +23,7 @@ export const UserName = styled.Text`
    color: ${({ theme }) => theme.colors.white};
 `;
 
-export const Cards = styled.View`
-   padding: 0px 24px;
+export const Cards = styled(ScrollView)`
+   padding: 0px 20px;
    margin-top: 30px;
 `;

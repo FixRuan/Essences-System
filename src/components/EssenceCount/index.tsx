@@ -2,6 +2,7 @@ import React from 'react';
 import { useTheme } from 'styled-components/native';
 
 import Fire from '../../../src/assets/Essences/fire.svg';
+import { Type } from '../../utils/typeSvg';
 
 import {
     Container,
@@ -10,7 +11,7 @@ import {
 
 interface EssenceCountProps {
     essences: number;
-    type?: string;
+    type?: Type;
 }
 
 export function EssenceCount({ essences, type }: EssenceCountProps) {
