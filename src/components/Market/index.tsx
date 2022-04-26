@@ -24,7 +24,7 @@ export function Market({ active = false, ...rest }: MarketProps) {
 
 
     return (
-        <Container {...rest} active={active} disabled={active} activeOpacity={0.8}>
+        <Container {...rest} active={active} activeOpacity={0.8}>
             <Circle active={active}>
                 <MarketImage source={marketImage} />
             </Circle>

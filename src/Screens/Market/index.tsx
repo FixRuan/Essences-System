@@ -18,9 +18,15 @@ import {
     Cards,
 } from './styles';
 import { MarketCard } from './MarketCard';
+import { useNavigation } from '@react-navigation/native';
 
 export function Market() {
     const theme = useTheme();
+    const navigation = useNavigation<any>();
+
+    function handleGoHome() {
+        navigation.navigate('Home');
+    }
 
     return (
         <Container>
@@ -28,7 +34,7 @@ export function Market() {
 
 
             <Header>
-                <MarketView active={true} />
+                <MarketView active={true} onPress={handleGoHome} />
 
                 <UserInfo>
                     <PatternImage source={pattern} />

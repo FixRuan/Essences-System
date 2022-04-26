@@ -14,9 +14,15 @@ import {
     UserName,
     Cards,
 } from './styles';
+import { useNavigation } from '@react-navigation/native';
 
 export function Home() {
     const theme = useTheme();
+    const navigation = useNavigation<any>();
+
+    function handleGoMarket() {
+        navigation.navigate('Market');
+    }
 
     return (
         <Container>
@@ -24,11 +30,11 @@ export function Home() {
 
 
             <Header>
-                <Market active={true} />
+                <Market active={false} onPress={handleGoMarket} />
 
                 <UserInfo>
                     <UserName>Ruan Pablo</UserName>
-                    <EssenceCount essences={10} />
+                    <EssenceCount type='steel' essences={10} />
                 </UserInfo>
             </Header>
 

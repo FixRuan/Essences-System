@@ -3,12 +3,16 @@ import React from 'react';
 import AppLoading from "expo-app-loading";
 import { useFonts } from 'expo-font';
 
+import { NavigationContainer } from '@react-navigation/native';
 
 import { ThemeProvider } from 'styled-components/native';
 import theme from './src/Global/theme/theme';
 
 import { Home } from './src/Screens/Home';
 import { Market } from './src/Screens/Market';
+import { Perfil } from './src/Screens/Perfil';
+import { TabsRoute } from './src/routes/Tabs.routes';
+import { StackRoutes } from './src/routes/Stack.routes';
 
 let customFonts = {
   'Inika-Regular': require('./src/assets/Fonts/Inika-Regular.ttf'),
@@ -26,7 +30,9 @@ export default function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <Market />
+      <NavigationContainer>
+        <StackRoutes />
+      </NavigationContainer>
     </ThemeProvider>
   );
 }

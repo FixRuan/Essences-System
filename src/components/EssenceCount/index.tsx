@@ -2,7 +2,7 @@ import React from 'react';
 import { useTheme } from 'styled-components/native';
 
 import Fire from '../../../src/assets/Essences/fire.svg';
-import { Type } from '../../utils/typeSvg';
+import { ConvertTypeInSvg, Type } from '../../utils/typeSvg';
 
 import {
     Container,
@@ -17,9 +17,15 @@ interface EssenceCountProps {
 export function EssenceCount({ essences, type }: EssenceCountProps) {
     const theme = useTheme();
 
+    const typeSvg = {
+        type,
+        color: theme.colors.white,
+        size: 22,
+    }
+
     return (
         <Container>
-            <Fire fill={theme.colors.white} />
+            {ConvertTypeInSvg(typeSvg)}
             <EssenceNumber>{essences}</EssenceNumber>
         </Container>
     );

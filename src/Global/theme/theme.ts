@@ -2,6 +2,7 @@ export default {
     colors: {
         white: '#FFFFFF',
         black: '#17171B',
+        secondary: '#242429',
         gray: '#747476',
         shape: '#F2F2F2',
         type: {
