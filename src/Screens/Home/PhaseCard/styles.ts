@@ -1,3 +1,4 @@
+import { TouchableOpacity } from 'react-native';
 import { RFValue } from 'react-native-responsive-fontsize';
 import styled from 'styled-components/native';
 import { Type } from '../../../utils/typeSvg';
@@ -6,7 +7,7 @@ interface TypeProps {
    type: Type;
 }
 
-export const Container = styled.View<TypeProps>`
+export const Container = styled(TouchableOpacity) <TypeProps>`
    width: 100%;
    min-height: 110px;
    background-color: ${({ theme, type }) => theme.colors.backgroundType[type]};

@@ -7,6 +7,8 @@ import { Market } from '../../components/Market';
 import { EssenceCount } from '../../components/EssenceCount';
 import { PhaseCard } from './PhaseCard';
 
+import { phases, phaseProps } from '../../utils/phasesArray';
+
 import {
     Container,
     Header,
@@ -22,6 +24,10 @@ export function Home() {
 
     function handleGoMarket() {
         navigation.navigate('Market');
+    }
+
+    function handleGoPhase(phase: phaseProps) {
+        navigation.navigate('Phase', { phase });
     }
 
     return (
@@ -40,12 +46,18 @@ export function Home() {
 
 
             <Cards showsVerticalScrollIndicator={false}>
-                <PhaseCard type='fire' percentage={100} />
-                <PhaseCard type='dragon' percentage={80} />
-                <PhaseCard type='psychic' percentage={60} />
-                <PhaseCard type='grass' percentage={56} />
-                <PhaseCard type='steel' percentage={38} />
-                <PhaseCard type='rock' percentage={18} />
+                {phases.map(phase =>
+                    <PhaseCard
+                        key={phase.id}
+                        essence_type={phase.essence_type}
+                        percentage={100}
+                        name={phase.name}
+                        description={phase.description}
+                        type={phase.type}
+                        onPress={() => handleGoPhase(phase)}
+                    />
+                )}
+
             </Cards>
         </Container>
     );

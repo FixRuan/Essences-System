@@ -5,6 +5,7 @@ import { ConvertTypeInSvg } from '../../../utils/typeSvg';
 import { Essence } from './Essence';
 import { ProgressBar } from './ProgressBar';
 import { Type } from '../../../utils/typeSvg';
+import { TouchableOpacityProps } from 'react-native';
 
 import {
     Container,
@@ -16,17 +17,27 @@ import {
     Percentage,
 } from './styles';
 
-interface PhaseCardProps {
-    type: Type;
+interface PhaseCardProps extends TouchableOpacityProps {
+    essence_type: Type;
     percentage: number;
+    name: string;
+    description: string;
+    type: string;
 }
 
-export function PhaseCard({ type, percentage }: PhaseCardProps) {
+export function PhaseCard({
+    essence_type,
+    percentage,
+    name,
+    description,
+    type,
+    ...rest
+}: PhaseCardProps) {
 
     const theme = useTheme();
 
     const svg = {
-        type,
+        type: essence_type,
         color: theme.colors.white,
         size: 24,
     }
@@ -34,22 +45,22 @@ export function PhaseCard({ type, percentage }: PhaseCardProps) {
     const SvgType = ConvertTypeInSvg(svg);
 
     return (
-        <Container type={type} >
+        <Container {...rest} type={essence_type} activeOpacity={0.96} >
             <EssenceTypeView>
                 {SvgType}
             </EssenceTypeView>
 
             <Header>
-                <Title>#Introdução</Title>
-                <Essence type={type} />
+                <Title>#{name}</Title>
+                <Essence type={essence_type} />
             </Header>
 
             <Content>
-                <SubTitle>Entenderemos o básico de T.I e como tudo se conecta com programação.</SubTitle>
+                <SubTitle>{description}</SubTitle>
             </Content>
 
             <Percentage>{percentage}%</Percentage>
-            <ProgressBar type={type} percentage={percentage} />
+            <ProgressBar type={essence_type} percentage={percentage} />
         </Container>
     );
 }
