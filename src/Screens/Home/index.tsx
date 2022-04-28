@@ -50,7 +50,7 @@ export function Home() {
                     <PhaseCard
                         key={phase.id}
                         essence_type={phase.essence_type}
-                        percentage={100}
+                        percentage={60}
                         name={phase.name}
                         description={phase.description}
                         type={phase.type}
