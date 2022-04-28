@@ -95,5 +95,5 @@ export const Description = styled.Text`
 
 export const Cards = styled(ScrollView)`
     margin-top: 32px;
-    padding: 0px 52px 0px 20px;
+    padding: 12px 52px 0px 20px;
 `;

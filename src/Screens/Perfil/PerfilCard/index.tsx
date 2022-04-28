@@ -1,4 +1,5 @@
 import React from 'react';
+import { View } from 'react-native';
 import { useTheme } from 'styled-components/native';
 import { ConvertTypeInSvg, Type } from '../../../utils/typeSvg';
 
@@ -8,6 +9,8 @@ import {
     PhaseComplete,
     TotalEssences,
     PhasesInfo,
+    PhaseType,
+    TypeName,
 } from './styles';
 
 interface PerfilCardProps {
@@ -24,7 +27,7 @@ export function PerfilCard({ type, phasesCompleted, totalEssences }: PerfilCardP
         type,
         size: 24,
         color: theme.colors.type[type],
-    }
+    };
 
     return (
         <Container type={type}>
@@ -33,6 +36,11 @@ export function PerfilCard({ type, phasesCompleted, totalEssences }: PerfilCardP
             </TypeCircle>
 
             <PhasesInfo>
+                <PhaseType type={type}>
+                    {ConvertTypeInSvg({ color: theme.colors.white, type, size: 16 })}
+                    <TypeName>{type}</TypeName>
+                </PhaseType>
+
                 <PhaseComplete>Fases completadas: {phasesCompleted}</PhaseComplete>
                 <TotalEssences>Total de essências: {totalEssences}</TotalEssences>
             </PhasesInfo>

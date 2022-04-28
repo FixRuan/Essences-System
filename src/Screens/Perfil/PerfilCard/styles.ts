@@ -36,6 +36,24 @@ export const PhasesInfo = styled.View`
     justify-content: center;
 `;
 
+export const PhaseType = styled.View<Props>`
+    padding: 0px 6px;
+    height: 25px;
+    background-color: ${({ theme, type }) => theme.colors.type[type]};
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    border-radius: 3px;
+    position: absolute;
+    bottom: -6px;
+    right: 20px;
+`;
+
+export const TypeName = styled.Text`
+    margin-left: 4px;
+    color: ${({ theme }) => theme.colors.white};
+`;
+
 export const PhaseComplete = styled.Text`
     color: ${({ theme }) => theme.colors.white};
     font-size: ${RFValue(20)}px;
