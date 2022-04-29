@@ -7,18 +7,14 @@ import { ProgressBullet } from '../../../components/ProgressBullet';
 import { phaseProps } from '../../../utils/phasesArray';
 import { TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import { ConvertTypeInSvg } from '../../../utils/typeSvg';
 
 import {
     Container,
     Header,
     Progress,
     Content,
-    Section,
-    SectionType,
-    SectionTitle,
-    SectionDescription,
 } from './styles';
+import { Section } from './Section';
 
 
 interface Props {
@@ -64,18 +60,20 @@ export function Practice({ phase, }: Props) {
             </Header>
 
             <Content>
-                <Section>
-                    <SectionType type={phase.essence_type}>
-                        {ConvertTypeInSvg(SectionTypeSvg)}
-                    </SectionType>
+                <Section
+                    title={'Bora Codar!'}
+                    description={'Nesse desafio você vai desenhar 6 essências com alguns comandos.'}
+                    type={phase.essence_type}
+                    type_svg={SectionTypeSvg}
+                />
 
-                    <SectionTitle>Bora Codar!</SectionTitle>
-                    <SectionDescription>Nesse desafio você vai desenhar 6 essências com alguns comandos.</SectionDescription>
-                </Section>
+                <Section
+                    title={'Dicas!'}
+                    description={'Utilize os botões para criar as essências e use a essência “normal” para quebrar a linha'}
+                    type={phase.essence_type}
+                    type_svg={SectionTypeSvg}
+                />
             </Content>
-
-
-
         </Container>
     );
 }
