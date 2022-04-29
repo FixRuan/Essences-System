@@ -45,5 +45,54 @@ export const phases: phaseProps[] = [
         name: 'Introdução',
         description: 'Entenderemos o básico de T.I e como tudo se conecta com programação.',
         essence_type: 'rock'
-    }
+    },
+    {
+        id: '6',
+        type: 'practice',
+        name: 'Introdução',
+        description: 'Entenderemos o básico de T.I e como tudo se conecta com programação.',
+        essence_type: 'electric'
+    },
+    {
+        id: '7',
+        type: 'practice',
+        name: 'Introdução',
+        description: 'Entenderemos o básico de T.I e como tudo se conecta com programação.',
+        essence_type: 'grass'
+    },
+    {
+        id: '8',
+        type: 'practice',
+        name: 'Introdução',
+        description: 'Entenderemos o básico de T.I e como tudo se conecta com programação.',
+        essence_type: 'ice'
+    },
+    {
+        id: '9',
+        type: 'practice',
+        name: 'Introdução',
+        description: 'Entenderemos o básico de T.I e como tudo se conecta com programação.',
+        essence_type: 'fighting'
+    },
+    {
+        id: '10',
+        type: 'practice',
+        name: 'Introdução',
+        description: 'Entenderemos o básico de T.I e como tudo se conecta com programação.',
+        essence_type: 'psychic'
+    },
+    {
+        id: '11',
+        type: 'practice',
+        name: 'Introdução',
+        description: 'Entenderemos o básico de T.I e como tudo se conecta com programação.',
+        essence_type: 'ground'
+    },
+    {
+        id: '12',
+        type: 'practice',
+        name: 'Introdução',
+        description: 'Entenderemos o básico de T.I e como tudo se conecta com programação.',
+        essence_type: 'flying'
+    },
 ]

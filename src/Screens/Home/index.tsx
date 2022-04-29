@@ -6,8 +6,11 @@ import { useTheme } from 'styled-components/native';
 import { Market } from '../../components/Market';
 import { EssenceCount } from '../../components/EssenceCount';
 import { PhaseCard } from './PhaseCard';
+import { useNavigation } from '@react-navigation/native';
 
 import { phases, phaseProps } from '../../utils/phasesArray';
+
+import { user } from '../../utils/user';
 
 import {
     Container,
@@ -16,7 +19,6 @@ import {
     UserName,
     Cards,
 } from './styles';
-import { useNavigation } from '@react-navigation/native';
 
 export function Home() {
     const theme = useTheme();
@@ -39,8 +41,8 @@ export function Home() {
                 <Market active={false} onPress={handleGoMarket} />
 
                 <UserInfo>
-                    <UserName>Ruan Pablo</UserName>
-                    <EssenceCount type='steel' essences={10} />
+                    <UserName>{user.name}</UserName>
+                    <EssenceCount type={user.userType} essences={10} />
                 </UserInfo>
             </Header>
 
