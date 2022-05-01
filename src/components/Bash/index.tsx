@@ -1,5 +1,7 @@
 import React from 'react';
+import { View } from 'react-native';
 import { ConvertTypeInSvg, Type } from '../../utils/typeSvg';
+import { Command } from './Command';
 
 import {
     Container,
@@ -29,7 +31,13 @@ export function Bash({ type_svg, type }: BashProps) {
             <BashTitle>Objetivo do código</BashTitle>
 
             <Content>
-
+                <Command type='fire' />
+                <Command type='fire' />
+                <Command type='fire' />
+                <View style={{ width: 60, height: 32 }} />
+                <Command type='fire' />
+                <Command type='fire' />
+                <Command type='fire' />
             </Content>
         </Container>
     );
