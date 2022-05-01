@@ -15,6 +15,7 @@ import {
     Progress,
     Content,
 } from './styles';
+import { Bash } from '../../../components/Bash';
 
 
 interface Props {
@@ -29,7 +30,7 @@ export function Practice({ phase, }: Props) {
     const bullets = [true, false, false, false, false];
     const [bullet, setBullet] = useState(bullets);
 
-    const SectionTypeSvg = {
+    const TypeSvg = {
         type: phase.essence_type,
         size: 24,
         color: theme.colors.white
@@ -64,14 +65,21 @@ export function Practice({ phase, }: Props) {
                     title={'Bora Codar!'}
                     description={'Nesse desafio você vai desenhar 6 essências com alguns comandos.'}
                     type={phase.essence_type}
-                    type_svg={SectionTypeSvg}
+                    type_svg={TypeSvg}
                 />
 
                 <Section
                     title={'Dicas!'}
                     description={'Utilize os botões para criar as essências e use a essência “normal” para quebrar a linha'}
                     type={phase.essence_type}
-                    type_svg={SectionTypeSvg}
+                    type_svg={TypeSvg}
+                />
+
+                <Bash
+                    type_svg={{
+                        ...TypeSvg,
+                        color: theme.colors.type[phase.essence_type]
+                    }}
                 />
             </Content>
         </Container>
