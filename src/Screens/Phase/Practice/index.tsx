@@ -76,10 +76,8 @@ export function Practice({ phase, }: Props) {
                 />
 
                 <Bash
-                    type_svg={{
-                        ...TypeSvg,
-                        color: theme.colors.type[phase.essence_type]
-                    }}
+                    type={phase.essence_type}
+                    type_svg={TypeSvg}
                 />
             </Content>
         </Container>

@@ -16,12 +16,13 @@ type TypeSvg = {
 
 interface BashProps {
     type_svg: TypeSvg;
+    type: Type;
 }
 
-export function Bash({ type_svg }: BashProps) {
+export function Bash({ type_svg, type }: BashProps) {
     return (
         <Container>
-            <BashType>
+            <BashType type={type}>
                 {ConvertTypeInSvg(type_svg)}
             </BashType>
 

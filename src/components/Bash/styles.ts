@@ -18,11 +18,11 @@ export const Container = styled.View`
    margin-bottom: 25px;
 `;
 
-export const BashType = styled.View`
+export const BashType = styled.View<Props>`
     width: 60px;
     height: 60px;
     border-radius: 30px;
-    background-color: ${({ theme }) => theme.colors.black};
+    background-color: ${({ theme, type }) => theme.colors.type[type]};
     align-items: center;
     justify-content: center;
     position: absolute;
@@ -41,7 +41,7 @@ export const BashTitle = styled.Text`
 
 export const Content = styled.View`
    width: 180px;
-   height: 100px;
+   min-height: 60px;
    flex-direction: row;
    flex-wrap: wrap;
    background-color: ${({ theme }) => theme.colors.white};
