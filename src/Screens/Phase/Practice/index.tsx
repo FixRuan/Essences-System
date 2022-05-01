@@ -7,6 +7,7 @@ import { ProgressBullet } from '../../../components/ProgressBullet';
 import { phaseProps } from '../../../utils/phasesArray';
 import { TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import { Section } from './Section';
 
 import {
     Container,
@@ -14,7 +15,6 @@ import {
     Progress,
     Content,
 } from './styles';
-import { Section } from './Section';
 
 
 interface Props {

@@ -54,9 +54,9 @@ export function Perfil() {
                 </Visual>
 
                 <Info>
-                    <Name>Ruan Pablo</Name>
-                    <UserName>@Nappylityzz</UserName>
-                    <Description>🧬 Just a psychic user</Description>
+                    <Name>{user.name}</Name>
+                    <UserName>{user.username}</UserName>
+                    <Description>{user.description}</Description>
                     <Pattern source={patternImage} />
                 </Info>
             </UserInfo>

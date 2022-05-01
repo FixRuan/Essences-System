@@ -95,4 +95,25 @@ export const phases: phaseProps[] = [
         description: 'Entenderemos o básico de T.I e como tudo se conecta com programação.',
         essence_type: 'flying'
     },
+    {
+        id: '13',
+        type: 'practice',
+        name: 'Introdução',
+        description: 'Entenderemos o básico de T.I e como tudo se conecta com programação.',
+        essence_type: 'ghost'
+    },
+    {
+        id: '14',
+        type: 'practice',
+        name: 'Introdução',
+        description: 'Entenderemos o básico de T.I e como tudo se conecta com programação.',
+        essence_type: 'dragon'
+    },
+    {
+        id: '15',
+        type: 'practice',
+        name: 'Introdução',
+        description: 'Entenderemos o básico de T.I e como tudo se conecta com programação.',
+        essence_type: 'fairy'
+    },
 ]
