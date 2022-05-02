@@ -31,12 +31,6 @@ export function Practice({ phase, }: Props) {
     const bullets = [true, false, false, false, false];
     const [bullet, setBullet] = useState(bullets);
 
-    const TypeSvg = {
-        type: phase.essence_type,
-        size: 24,
-        color: theme.colors.white
-    }
-
     function handleGoHome() {
         navigation.navigate('Home');
     }
@@ -66,14 +60,12 @@ export function Practice({ phase, }: Props) {
                     title={'Bora Codar!'}
                     description={'Nesse desafio você vai desenhar 6 essências com alguns comandos.'}
                     type={phase.essence_type}
-                    type_svg={TypeSvg}
                 />
 
                 <Section
                     title={'Dicas!'}
                     description={'Utilize os botões para criar as essências e use a essência “normal” para quebrar a linha'}
                     type={phase.essence_type}
-                    type_svg={TypeSvg}
                 />
 
                 <Bash type={phase.essence_type} title={'Objetivo do código'}>

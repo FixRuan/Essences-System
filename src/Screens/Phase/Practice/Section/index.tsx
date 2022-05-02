@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTheme } from 'styled-components/native';
 import { ConvertTypeInSvg, Type } from '../../../../utils/typeSvg';
 
 import {
@@ -18,10 +19,16 @@ interface SectionProps {
     title: string;
     description: string;
     type: Type;
-    type_svg: TypeSvg;
 }
 
-export function Section({ title, description, type, type_svg }: SectionProps) {
+export function Section({ title, description, type }: SectionProps) {
+    const theme = useTheme();
+
+    const type_svg: TypeSvg = {
+        type,
+        size: 24,
+        color: theme.colors.white
+    }
     return (
         <Container>
             <SectionType type={type}>

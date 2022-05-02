@@ -12,8 +12,6 @@ interface ProgressBulletProps {
 
 export function ProgressBullet({ active, type }: ProgressBulletProps) {
     return (
-        <Container active={active} type={type}>
-
-        </Container>
+        <Container active={active} type={type} />
     );
 }
