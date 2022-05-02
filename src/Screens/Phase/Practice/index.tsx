@@ -5,7 +5,7 @@ import { useTheme } from 'styled-components/native';
 
 import { ProgressBullet } from '../../../components/ProgressBullet';
 import { phaseProps } from '../../../utils/phasesArray';
-import { TouchableOpacity } from 'react-native';
+import { TouchableOpacity, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { Section } from './Section';
 
@@ -16,6 +16,7 @@ import {
     Content,
 } from './styles';
 import { Bash } from '../../../components/Bash';
+import { Command } from '../../../components/Bash/Command';
 
 
 interface Props {
@@ -75,10 +76,21 @@ export function Practice({ phase, }: Props) {
                     type_svg={TypeSvg}
                 />
 
-                <Bash
-                    type={phase.essence_type}
-                    type_svg={TypeSvg}
-                />
+                <Bash type={phase.essence_type} title={'Objetivo do código'}>
+                    <Command type='ground' />
+                    <Command type='fire' />
+                    <Command type='fire' />
+                    <Command type='fire' />
+                    <View style={{ width: 20, height: 32 }} />
+                    <Command type='fire' />
+                    <Command type='fire' />
+                    <Command type='fire' />
+                    <Command type='ground' />
+                </Bash>
+
+                <Bash type={phase.essence_type} title={'Código atual'}>
+                    <Command type='ground' />
+                </Bash>
             </Content>
         </Container>
     );

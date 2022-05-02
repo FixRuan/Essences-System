@@ -41,11 +41,11 @@ export const BashTitle = styled.Text`
 
 export const Content = styled.View`
    max-width: 180px;
+   min-width: 180px;
    min-height: 30px;
    flex-direction: row;
    flex-wrap: wrap;
    background-color: ${({ theme }) => theme.colors.white};
    align-self: center;
    margin-top: 20px;
-   margin-left: 60px;
 `;

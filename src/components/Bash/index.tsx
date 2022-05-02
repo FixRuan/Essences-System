@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import { View } from 'react-native';
+import { useTheme } from 'styled-components/native';
 import { ConvertTypeInSvg, Type } from '../../utils/typeSvg';
 import { Command } from './Command';
 
@@ -17,27 +18,30 @@ type TypeSvg = {
 }
 
 interface BashProps {
-    type_svg: TypeSvg;
     type: Type;
+    title: string;
+    children: ReactNode;
 }
 
-export function Bash({ type_svg, type }: BashProps) {
+export function Bash({ type, title, children }: BashProps) {
+    const theme = useTheme();
+
+    const type_svg: TypeSvg = {
+        type,
+        size: 24,
+        color: theme.colors.white,
+    }
+
     return (
         <Container>
             <BashType type={type}>
                 {ConvertTypeInSvg(type_svg)}
             </BashType>
 
-            <BashTitle>Objetivo do código</BashTitle>
+            <BashTitle>{title}</BashTitle>
 
             <Content>
-                <Command type='fire' />
-                <Command type='fire' />
-                <Command type='fire' />
-                <View style={{ width: 60, height: 32 }} />
-                <Command type='fire' />
-                <Command type='fire' />
-                <Command type='fire' />
+                <>{children}</>
             </Content>
         </Container>
     );
