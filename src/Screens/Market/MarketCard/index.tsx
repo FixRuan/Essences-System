@@ -64,7 +64,7 @@ export function MarketCard({ type }: MarketCardProps) {
 
             </Container>
 
-            <BuyButton type={type}>
+            <BuyButton activeOpacity={0.8} type={type}>
                 <ButtonText>Buy</ButtonText>
             </BuyButton>
         </Card>

@@ -35,7 +35,7 @@ export const Content = styled(ScrollView)`
 
 export const Cards = styled.View`
     flex-direction: row;
-    padding: 0px 22px;
+    padding: 0px 12px;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;

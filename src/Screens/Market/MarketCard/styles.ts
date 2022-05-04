@@ -14,8 +14,8 @@ export const Container = styled.View`
    width: 155px;
    height: 105px;
    background-color: ${({ theme }) => theme.colors.white};
-   margin-left: 8px;
-   margin-right: 8px;
+   margin-left: 14px;
+   margin-right: 14px;
    border-top-left-radius: 10px;
    border-top-right-radius: 35px;
    border-bottom-right-radius: 10px;
