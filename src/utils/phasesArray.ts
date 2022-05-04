@@ -1,5 +1,10 @@
 import { Type } from "./typeSvg";
 
+type PhaseOptions = {
+    type: Type,
+    name: string,
+}
+
 export type phaseProps = {
     id: string;
     name: string;
@@ -8,6 +13,7 @@ export type phaseProps = {
     essence_type: Type;
     answers: Type[];
     default_answer: Type[];
+    options: PhaseOptions[];
 }
 
 export const phases: phaseProps[] = [
@@ -31,6 +37,24 @@ export const phases: phaseProps[] = [
         default_answer: [
             'ground',
             'fire',
+        ],
+        options: [
+            {
+                type: 'fire',
+                name: 'fire',
+            },
+            {
+                type: 'water',
+                name: 'water',
+            },
+            {
+                type: 'ground',
+                name: 'ground',
+            },
+            {
+                type: 'normal',
+                name: 'newLine',
+            },
         ]
     },
     {
@@ -53,6 +77,24 @@ export const phases: phaseProps[] = [
         default_answer: [
             'ice',
             'water',
+        ],
+        options: [
+            {
+                type: 'ice',
+                name: 'fire',
+            },
+            {
+                type: 'water',
+                name: 'water',
+            },
+            {
+                type: 'bug',
+                name: 'bug',
+            },
+            {
+                type: 'normal',
+                name: 'newLine',
+            },
         ]
     },
     {
@@ -75,6 +117,24 @@ export const phases: phaseProps[] = [
         default_answer: [
             'bug',
             'poison',
+        ],
+        options: [
+            {
+                type: 'bug',
+                name: 'bug',
+            },
+            {
+                type: 'poison',
+                name: 'poison',
+            },
+            {
+                type: 'normal',
+                name: 'newLine',
+            },
+            {
+                type: 'fighting',
+                name: 'fighting',
+            },
         ]
     },
     {
@@ -97,6 +157,24 @@ export const phases: phaseProps[] = [
         default_answer: [
             'grass',
             'bug',
+        ],
+        options: [
+            {
+                type: 'grass',
+                name: 'grass',
+            },
+            {
+                type: 'normal',
+                name: 'newLine',
+            },
+            {
+                type: 'bug',
+                name: 'bug',
+            },
+            {
+                type: 'ice',
+                name: 'ice',
+            },
         ]
     },
     {
@@ -119,6 +197,24 @@ export const phases: phaseProps[] = [
         default_answer: [
             'fire',
             'rock',
+        ],
+        options: [
+            {
+                type: 'fire',
+                name: 'fire',
+            },
+            {
+                type: 'water',
+                name: 'water',
+            },
+            {
+                type: 'rock',
+                name: 'rock',
+            },
+            {
+                type: 'normal',
+                name: 'newLine',
+            },
         ]
     },
     {
@@ -141,6 +237,24 @@ export const phases: phaseProps[] = [
         default_answer: [
             'fairy',
             'electric',
+        ],
+        options: [
+            {
+                type: 'psychic',
+                name: 'psychic',
+            },
+            {
+                type: 'electric',
+                name: 'electric',
+            },
+            {
+                type: 'normal',
+                name: 'newLine',
+            },
+            {
+                type: 'fairy',
+                name: 'fairy',
+            },
         ]
     },
     {
@@ -163,6 +277,24 @@ export const phases: phaseProps[] = [
         default_answer: [
             'bug',
             'grass',
+        ],
+        options: [
+            {
+                type: 'bug',
+                name: 'bug',
+            },
+            {
+                type: 'grass',
+                name: 'grass',
+            },
+            {
+                type: 'normal',
+                name: 'newLine',
+            },
+            {
+                type: 'poison',
+                name: 'poison',
+            },
         ]
     },
     {
@@ -185,6 +317,24 @@ export const phases: phaseProps[] = [
         default_answer: [
             'water',
             'ice',
+        ],
+        options: [
+            {
+                type: 'water',
+                name: 'water',
+            },
+            {
+                type: 'ice',
+                name: 'ice',
+            },
+            {
+                type: 'normal',
+                name: 'newLine',
+            },
+            {
+                type: 'fighting',
+                name: 'fighting',
+            },
         ]
     },
     {
@@ -207,6 +357,24 @@ export const phases: phaseProps[] = [
         default_answer: [
             'psychic',
             'fighting',
+        ],
+        options: [
+            {
+                type: 'psychic',
+                name: 'psychic',
+            },
+            {
+                type: 'fighting',
+                name: 'fighting',
+            },
+            {
+                type: 'normal',
+                name: 'newLine',
+            },
+            {
+                type: 'poison',
+                name: 'poison',
+            },
         ]
     },
     {
@@ -229,6 +397,24 @@ export const phases: phaseProps[] = [
         default_answer: [
             'dark',
             'psychic',
+        ],
+        options: [
+            {
+                type: 'dark',
+                name: 'dark',
+            },
+            {
+                type: 'psychic',
+                name: 'psychic',
+            },
+            {
+                type: 'fire',
+                name: 'fire',
+            },
+            {
+                type: 'normal',
+                name: 'newLine',
+            },
         ]
     },
     {
@@ -251,6 +437,24 @@ export const phases: phaseProps[] = [
         default_answer: [
             'fire',
             'ground',
+        ],
+        options: [
+            {
+                type: 'fire',
+                name: 'fire',
+            },
+            {
+                type: 'ground',
+                name: 'ground',
+            },
+            {
+                type: 'normal',
+                name: 'newLine',
+            },
+            {
+                type: 'poison',
+                name: 'poison',
+            },
         ]
     },
     {
@@ -273,6 +477,24 @@ export const phases: phaseProps[] = [
         default_answer: [
             'dragon',
             'flying',
+        ],
+        options: [
+            {
+                type: 'dragon',
+                name: 'dragon',
+            },
+            {
+                type: 'flying',
+                name: 'flying',
+            },
+            {
+                type: 'normal',
+                name: 'newLine',
+            },
+            {
+                type: "flying",
+                name: "flying",
+            },
         ]
     },
     {
@@ -295,6 +517,24 @@ export const phases: phaseProps[] = [
         default_answer: [
             'flying',
             'ghost',
+        ],
+        options: [
+            {
+                type: 'flying',
+                name: 'flying',
+            },
+            {
+                type: 'ghost',
+                name: 'ghost',
+            },
+            {
+                type: 'normal',
+                name: 'newLine',
+            },
+            {
+                type: 'electric',
+                name: 'electric',
+            },
         ]
     },
     {
@@ -317,6 +557,24 @@ export const phases: phaseProps[] = [
         default_answer: [
             'flying',
             'dragon',
+        ],
+        options: [
+            {
+                type: 'flying',
+                name: 'flying',
+            },
+            {
+                type: 'dragon',
+                name: 'dragon',
+            },
+            {
+                type: 'normal',
+                name: 'newLine',
+            },
+            {
+                type: 'dark',
+                name: 'dark',
+            },
         ]
     },
     {
@@ -339,6 +597,24 @@ export const phases: phaseProps[] = [
         default_answer: [
             'electric',
             'fairy',
+        ],
+        options: [
+            {
+                type: 'electric',
+                name: 'electric',
+            },
+            {
+                type: 'fairy',
+                name: 'fairy',
+            },
+            {
+                type: 'normal',
+                name: 'newLine',
+            },
+            {
+                type: 'fighting',
+                name: 'fighting',
+            },
         ]
     },
 ]

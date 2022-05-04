@@ -13,100 +13,103 @@ import { Options } from '../../../components/Options';
 import { Command } from '../../../components/Bash/Command';
 import { ProgressBullet } from '../../../components/ProgressBullet';
 import { OptionButton } from '../../../components/Options/OptionButton';
+import { Button } from '../../../components/Button';
 
 import {
-    Container,
-    Header,
-    Progress,
-    Content,
-    ButtonGroup,
+	Container,
+	Header,
+	Progress,
+	Content,
+	ButtonGroup,
 } from './styles';
-import { Button } from '../../../components/Button';
 
 
 
 interface Props {
-    phase: phaseProps;
+	phase: phaseProps;
 }
 
 
 export function Practice({ phase, }: Props) {
-    const theme = useTheme();
-    const navigation = useNavigation<any>();
+	const theme = useTheme();
+	const navigation = useNavigation<any>();
 
-    const bullets = [true, false, false, false, false];
-    const [bullet, setBullet] = useState(bullets);
+	const bullets = [true, false, false, false, false];
+	const [bullet, setBullet] = useState(bullets);
 
-    function handleGoHome() {
-        navigation.navigate('Home');
-    }
+	function handleGoHome() {
+		navigation.navigate('Home');
+	}
 
-    return (
-        <Container>
-            <StatusBar backgroundColor={theme.colors.black} style={'light'} translucent={false} />
+	return (
+		<Container>
+			<StatusBar backgroundColor={theme.colors.black} style={'light'} translucent={false} />
 
-            <Header>
-                <TouchableOpacity onPress={handleGoHome}>
-                    <Feather name='arrow-left' size={36} color={theme.colors.secondary} />
-                </TouchableOpacity>
+			<Header>
+				<TouchableOpacity onPress={handleGoHome}>
+					<Feather name='arrow-left' size={36} color={theme.colors.secondary} />
+				</TouchableOpacity>
 
-                <Progress>
-                    {bullet.map((item, index) =>
-                        <ProgressBullet
-                            type={phase.essence_type}
-                            key={index}
-                            active={item}
-                        />)
-                    }
-                </Progress>
-            </Header>
+				<Progress>
+					{bullet.map((item, index) =>
+						<ProgressBullet
+							type={phase.essence_type}
+							key={index}
+							active={item}
+						/>)
+					}
+				</Progress>
+			</Header>
 
-            <ScrollView>
-                <Content>
-                    <Section
-                        title={'Bora Codar!'}
-                        description={'Nesse desafio você vai desenhar 6 essências com alguns comandos.'}
-                        type={phase.essence_type}
-                    />
+			<ScrollView>
+				<Content>
+					<Section
+						title={'Bora Codar!'}
+						description={'Nesse desafio você vai desenhar 6 essências com alguns comandos.'}
+						type={phase.essence_type}
+					/>
 
-                    <Section
-                        title={'Dicas!'}
-                        description={'Utilize os botões para criar as essências e use a essência “normal” para quebrar a linha'}
-                        type={phase.essence_type}
-                    />
+					<Section
+						title={'Dicas!'}
+						description={'Utilize os botões para criar as essências e use a essência “normal” para quebrar a linha'}
+						type={phase.essence_type}
+					/>
 
-                    <Bash type={phase.essence_type} title={'Objetivo do código'}>
-                        {phase.answers.map((option, index) =>
-                            <Command key={index} type={option} />)
-                        }
-                    </Bash>
+					<Bash type={phase.essence_type} title={'Objetivo do código'}>
+						{phase.answers.map((option, index) =>
+							<Command key={index} type={option} />)
+						}
+					</Bash>
 
-                    <Bash type={phase.essence_type} title={'Código atual'}>
-                        {phase.default_answer.map((option, index) =>
-                            <Command key={index} type={option} />)
-                        }
-                    </Bash>
+					<Bash type={phase.essence_type} title={'Código atual'}>
+						{phase.default_answer.map((option, index) =>
+							<Command key={index} type={option} />)
+						}
+					</Bash>
 
-                    <Options type={phase.essence_type}>
-                        <OptionButton name='fire()' type='fire' />
-                        <OptionButton name='bug()' type='bug' />
-                        <OptionButton name='psychic()' type='psychic' />
-                        <OptionButton name='newLine()' type='normal' />
-                    </Options>
+					<Options type={phase.essence_type}>
+						{phase.options.map((option, index) =>
+							<OptionButton
+								key={index}
+								name={option.name}
+								type={option.type}
+							/>
+						)}
+					</Options>
 
-                    <ButtonGroup>
-                        <Button
-                            type='normal'
-                            title='Solução'
-                        />
+					<ButtonGroup>
+						<Button
+							type='normal'
+							title='Solução'
+						/>
 
-                        <Button
-                            type={phase.essence_type}
-                            title='Compilar'
-                        />
-                    </ButtonGroup>
-                </Content>
-            </ScrollView>
-        </Container>
-    );
+						<Button
+							type={phase.essence_type}
+							title='Compilar'
+						/>
+					</ButtonGroup>
+				</Content>
+			</ScrollView>
+		</Container>
+	);
 }
