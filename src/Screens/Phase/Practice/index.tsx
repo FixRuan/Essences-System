@@ -1,23 +1,28 @@
 import React, { useState } from 'react';
-import { Feather } from '@expo/vector-icons';
 import { StatusBar } from 'expo-status-bar';
+import { Feather } from '@expo/vector-icons';
 import { useTheme } from 'styled-components/native';
 
-import { ProgressBullet } from '../../../components/ProgressBullet';
 import { phaseProps } from '../../../utils/phasesArray';
-import { ScrollView, TouchableOpacity, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import { ScrollView, TouchableOpacity, View } from 'react-native';
+
 import { Section } from './Section';
+import { Bash } from '../../../components/Bash';
+import { Options } from '../../../components/Options';
+import { Command } from '../../../components/Bash/Command';
+import { ProgressBullet } from '../../../components/ProgressBullet';
+import { OptionButton } from '../../../components/Options/OptionButton';
 
 import {
     Container,
     Header,
     Progress,
     Content,
+    ButtonGroup,
 } from './styles';
-import { Bash } from '../../../components/Bash';
-import { Command } from '../../../components/Bash/Command';
-import { Options } from '../../../components/Options';
+import { Button } from '../../../components/Button';
+
 
 
 interface Props {
@@ -86,7 +91,24 @@ export function Practice({ phase, }: Props) {
                         <Command type='ground' />
                     </Bash>
 
-                    <Options type={phase.essence_type}></Options>
+                    <Options type={phase.essence_type}>
+                        <OptionButton name='fire()' type='fire' />
+                        <OptionButton name='bug()' type='bug' />
+                        <OptionButton name='psychic()' type='psychic' />
+                        <OptionButton name='newLine()' type='normal' />
+                    </Options>
+
+                    <ButtonGroup>
+                        <Button
+                            type='normal'
+                            title='Solução'
+                        />
+
+                        <Button
+                            type={phase.essence_type}
+                            title='Compilar'
+                        />
+                    </ButtonGroup>
                 </Content>
             </ScrollView>
         </Container>

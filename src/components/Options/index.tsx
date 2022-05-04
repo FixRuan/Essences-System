@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import { useTheme } from 'styled-components/native';
 import { ConvertTypeInSvg, Type } from '../../utils/typeSvg';
 import { OptionButton } from './OptionButton';
@@ -12,9 +12,10 @@ import {
 
 interface OptionsProps {
     type: Type;
+    children: ReactNode;
 }
 
-export function Options({ type }: OptionsProps) {
+export function Options({ type, children }: OptionsProps) {
 
     const theme = useTheme();
 
@@ -33,10 +34,9 @@ export function Options({ type }: OptionsProps) {
             <Title>Opções</Title>
 
             <ButtonGroup>
-                <OptionButton name='fire()' type='fire' />
-                <OptionButton name='bug()' type='bug' />
-                <OptionButton name='psychic()' type='psychic' />
-                <OptionButton name='newLine()' type='normal' />
+                <>
+                    {children}
+                </>
             </ButtonGroup>
         </Container>
     );

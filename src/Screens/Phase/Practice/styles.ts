@@ -72,3 +72,9 @@ export const SectionDescription = styled.Text`
     margin-top: 6px;
     text-align: justify;
 `;
+
+export const ButtonGroup = styled.View`
+    flex-direction: row;
+    align-self: flex-end;
+    margin-bottom: 20px;
+`;
