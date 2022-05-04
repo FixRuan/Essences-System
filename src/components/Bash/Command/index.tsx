@@ -3,14 +3,9 @@ import { useTheme } from 'styled-components/native';
 import { ConvertTypeInSvg, Type } from '../../../utils/typeSvg';
 
 import {
-    Container
+    Container,
+    NewLine,
 } from './styles';
-
-type TypeSvg = {
-    type: Type,
-    size: number,
-    color: string,
-}
 
 interface CommandProps {
     type: Type;
@@ -26,8 +21,12 @@ export function Command({ type }: CommandProps) {
     }
 
     return (
-        <Container type={type}>
-            {ConvertTypeInSvg(type_svg)}
-        </Container>
+        <>
+            {type == 'normal' ? <NewLine /> : (
+                <Container type={type}>
+                    {ConvertTypeInSvg(type_svg)}
+                </Container>
+            )}
+        </>
     );
 }

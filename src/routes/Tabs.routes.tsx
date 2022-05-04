@@ -1,13 +1,12 @@
 import React from 'react';
+import { Platform } from 'react-native';
+import { useTheme } from 'styled-components/native';
 import { Feather } from '@expo/vector-icons';
 
 import { Home } from '../Screens/Home';
 import { Perfil } from '../Screens/Perfil';
 
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { useTheme } from 'styled-components/native';
-import { Platform } from 'react-native';
-import { StackRoutes } from './Stack.routes';
 const { Navigator, Screen } = createBottomTabNavigator();
 
 
@@ -24,7 +23,7 @@ export function TabsRoute() {
                 tabBarStyle: {
                     height: 78,
                     paddingVertical: Platform.OS === 'ios' ? 20 : 0,
-                    backgroundColor: theme.colors.black
+                    backgroundColor: theme.colors.black,
                 },
                 tabBarActiveTintColor: theme.colors.white,
                 tabBarInactiveTintColor: theme.colors.gray,

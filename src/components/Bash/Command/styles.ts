@@ -16,3 +16,8 @@ export const Container = styled.View<Props>`
     align-items: center;
     justify-content: center;
 `;
+
+export const NewLine = styled.View`
+    width: 20px;
+    height: 32px;
+`;

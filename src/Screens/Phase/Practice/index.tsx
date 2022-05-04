@@ -76,15 +76,7 @@ export function Practice({ phase, }: Props) {
                     />
 
                     <Bash type={phase.essence_type} title={'Objetivo do código'}>
-                        <Command type='ground' />
-                        <Command type='fire' />
-                        <Command type='fire' />
-                        <Command type='fire' />
-                        <View style={{ width: 20, height: 32 }} />
-                        <Command type='fire' />
-                        <Command type='fire' />
-                        <Command type='fire' />
-                        <Command type='ground' />
+                        {phase.answers.map((option, index) => <Command key={index} type={option} />)}
                     </Bash>
 
                     <Bash type={phase.essence_type} title={'Código atual'}>
