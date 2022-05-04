@@ -1,7 +1,5 @@
 import { Type } from "./typeSvg";
 
-
-
 export type phaseProps = {
     id: string;
     name: string;
@@ -9,9 +7,8 @@ export type phaseProps = {
     type: string;
     essence_type: Type;
     answers: Type[];
+    default_answer: Type[];
 }
-
-
 
 export const phases: phaseProps[] = [
     {
@@ -30,6 +27,10 @@ export const phases: phaseProps[] = [
             'fire',
             'fire',
             'ground',
+        ],
+        default_answer: [
+            'ground',
+            'fire',
         ]
     },
     {
@@ -48,6 +49,10 @@ export const phases: phaseProps[] = [
             'water',
             'water',
             'ice',
+        ],
+        default_answer: [
+            'ice',
+            'water',
         ]
     },
     {
@@ -66,6 +71,10 @@ export const phases: phaseProps[] = [
             'poison',
             'poison',
             'bug',
+        ],
+        default_answer: [
+            'bug',
+            'poison',
         ]
     },
     {
@@ -84,6 +93,10 @@ export const phases: phaseProps[] = [
             'bug',
             'bug',
             'grass',
+        ],
+        default_answer: [
+            'grass',
+            'bug',
         ]
     },
     {
@@ -102,6 +115,10 @@ export const phases: phaseProps[] = [
             'rock',
             'rock',
             'fire',
+        ],
+        default_answer: [
+            'fire',
+            'rock',
         ]
     },
     {
@@ -120,6 +137,10 @@ export const phases: phaseProps[] = [
             'electric',
             'electric',
             'fairy',
+        ],
+        default_answer: [
+            'fairy',
+            'electric',
         ]
     },
     {
@@ -138,6 +159,10 @@ export const phases: phaseProps[] = [
             'grass',
             'grass',
             'bug',
+        ],
+        default_answer: [
+            'bug',
+            'grass',
         ]
     },
     {
@@ -156,6 +181,10 @@ export const phases: phaseProps[] = [
             'ice',
             'ice',
             'water',
+        ],
+        default_answer: [
+            'water',
+            'ice',
         ]
     },
     {
@@ -174,6 +203,10 @@ export const phases: phaseProps[] = [
             'fighting',
             'fighting',
             'psychic',
+        ],
+        default_answer: [
+            'psychic',
+            'fighting',
         ]
     },
     {
@@ -192,6 +225,10 @@ export const phases: phaseProps[] = [
             'psychic',
             'psychic',
             'dark',
+        ],
+        default_answer: [
+            'dark',
+            'psychic',
         ]
     },
     {
@@ -210,6 +247,10 @@ export const phases: phaseProps[] = [
             'ground',
             'ground',
             'fire',
+        ],
+        default_answer: [
+            'fire',
+            'ground',
         ]
     },
     {
@@ -228,6 +269,10 @@ export const phases: phaseProps[] = [
             'flying',
             'flying',
             'dragon',
+        ],
+        default_answer: [
+            'dragon',
+            'flying',
         ]
     },
     {
@@ -246,6 +291,10 @@ export const phases: phaseProps[] = [
             'ghost',
             'ghost',
             'flying',
+        ],
+        default_answer: [
+            'flying',
+            'ghost',
         ]
     },
     {
@@ -264,6 +313,10 @@ export const phases: phaseProps[] = [
             'dragon',
             'dragon',
             'flying',
+        ],
+        default_answer: [
+            'flying',
+            'dragon',
         ]
     },
     {
@@ -282,6 +335,10 @@ export const phases: phaseProps[] = [
             'fairy',
             'fairy',
             'electric',
+        ],
+        default_answer: [
+            'electric',
+            'fairy',
         ]
     },
 ]
