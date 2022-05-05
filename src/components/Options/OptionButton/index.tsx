@@ -25,7 +25,7 @@ export function OptionButton({ type, name, ...rest }: OptionButtonProps) {
         <Container type={type} activeOpacity={0.8} {...rest}>
             {ConvertTypeInSvg(type_svg)}
 
-            <Title>{name}</Title>
+            <Title>{name}()</Title>
         </Container>
     );
 }
